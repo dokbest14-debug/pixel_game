@@ -1,0 +1,13 @@
+body {
+    background-color: white; /* Твой запрос: белый фон */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#pet {
+    width: 200px; /* Размер собаки */
+    height: auto;
+}
