@@ -2,20 +2,36 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой Питомец</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { background-color: #000; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        #pet { image-rendering: pixelated; width: 300px; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <svg id="pet" viewBox="0 0 100 100" width="200" height="200">
-            <rect x="20" y="40" width="60" height="40" fill="#FFD700" />
-            <rect x="30" y="20" width="40" height="30" fill="#FFD700" />
-            <rect x="35" y="25" width="10" height="10" fill="black" />
-            <rect x="55" y="25" width="10" height="10" fill="black" />
-        </svg>
-    </div>
-    <script src="app.js"></script>
+    <svg id="pet" viewBox="0 0 16 16" width="300" height="300">
+        <!-- Уши (темный оттенок для объема) -->
+        <rect x="3" y="2" width="2" height="3" fill="#D4AC0D" />
+        <rect x="11" y="2" width="2" height="3" fill="#D4AC0D" />
+        
+        <!-- Голова (основной цвет) -->
+        <rect x="4" y="2" width="8" height="7" fill="#FFD700" />
+        <!-- Морда (светлый оттенок для акцента) -->
+        <rect x="6" y="5" width="4" height="3" fill="#FFE57A" />
+        
+        <!-- Глаза -->
+        <rect x="5" y="4" width="2" height="2" fill="black" />
+        <rect x="9" y="4" width="2" height="2" fill="black" />
+        <!-- Нос -->
+        <rect x="7" y="6" width="2" height="1" fill="#4A2C00" />
+        
+        <!-- Тело (основной цвет + тень снизу) -->
+        <rect x="3" y="9" width="10" height="6" fill="#FFD700" />
+        <rect x="3" y="13" width="10" height="2" fill="#D4AC0D" />
+        
+        <!-- Лапки -->
+        <rect x="4" y="14" width="2" height="2" fill="#D4AC0D" />
+        <rect x="10" y="14" width="2" height="2" fill="#D4AC0D" />
+    </svg>
 </body>
 </html>
