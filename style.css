@@ -1,13 +1,14 @@
-body {
-    background-color: white; /* Твой запрос: белый фон */
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+body { background-color: #000; color: #fff; margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; }
+.screen { display: flex; flex-direction: column; align-items: center; }
+.hidden { display: none; }
 
-#pet {
-    width: 200px; /* Размер собаки */
-    height: auto;
-}
+/* Спиннер */
+.spinner { border: 4px solid #333; border-top: 4px solid #FFD700; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Плавное исчезновение */
+.fade-out { animation: fadeOut 3s forwards; }
+@keyframes fadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+
+/* Рамка для ника (как в майнкрафте) */
+#nickname-plate { background: rgba(0, 0, 0, 0.5); padding: 5px 15px; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 4px; margin-bottom: 20px; font-weight: bold; }
