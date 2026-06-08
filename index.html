@@ -1,61 +1,45 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой Питомец</title>
-    <style>
-        body { background-color: #000; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        #pet { image-rendering: pixelated; width: 300px; }
-    </style>
-    <title>Pet App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Pet</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <svg id="pet" viewBox="0 0 16 16" width="300" height="300">
-        <!-- Уши (темный оттенок для объема) -->
-        <rect x="3" y="2" width="2" height="3" fill="#D4AC0D" />
-        <rect x="11" y="2" width="2" height="3" fill="#D4AC0D" />
-        
-        <!-- Голова (основной цвет) -->
-        <rect x="4" y="2" width="8" height="7" fill="#FFD700" />
-        <!-- Морда (светлый оттенок для акцента) -->
-        <rect x="6" y="5" width="4" height="3" fill="#FFE57A" />
-        
-        <!-- Глаза -->
-        <rect x="5" y="4" width="2" height="2" fill="black" />
-        <rect x="9" y="4" width="2" height="2" fill="black" />
-        <!-- Нос -->
-        <rect x="7" y="6" width="2" height="1" fill="#4A2C00" />
-        
-        <!-- Тело (основной цвет + тень снизу) -->
-        <rect x="3" y="9" width="10" height="6" fill="#FFD700" />
-        <rect x="3" y="13" width="10" height="2" fill="#D4AC0D" />
-        
-        <!-- Лапки -->
-        <rect x="4" y="14" width="2" height="2" fill="#D4AC0D" />
-        <rect x="10" y="14" width="2" height="2" fill="#D4AC0D" />
-    </svg>
 
     <!-- 1. Экран загрузки -->
-    <div id="loader-screen" class="screen">
+    <div id="loader-screen">
         <div class="spinner"></div>
     </div>
 
-    <!-- 2. Приветствие -->
-    <div id="hello-screen" class="screen hidden">
-        <h1 class="fade-out">hello.</h1>
+    <!-- 2. Экран приветствия -->
+    <div id="hello-screen" class="hidden">
+        <h1>hello.</h1>
     </div>
 
-    <!-- 3. Ввод имени -->
-    <div id="input-screen" class="screen hidden">
-        <input type="text" id="name-input" placeholder="Введите имя..." maxlength="10">
+    <!-- 3. Экран ввода ника -->
+    <div id="input-screen" class="hidden">
+        <input type="text" id="name-input" placeholder="Введите имя">
         <button id="ok-btn">OK</button>
     </div>
 
-    <!-- 4. Основной экран с собакой -->
-    <div id="main-screen" class="screen hidden">
-        <div id="nickname-plate"></div>
-        <svg id="pet" viewBox="0 0 16 16" width="300" height="300">
-            <!-- (Тут останется код собаки, который мы правили выше) -->
+    <!-- 4. Основной экран с игрой -->
+    <div id="main-screen" class="hidden">
+        <div id="name-display"></div>
+        
+        <svg id="pet" class="floating-pet" viewBox="0 0 32 32" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="4" width="4" height="6" fill="#B8860B" />
+            <rect x="22" y="4" width="4" height="6" fill="#B8860B" />
+            <rect x="8" y="4" width="16" height="12" fill="#FFD700" />
+            <rect x="9" y="5" width="2" height="2" fill="#FFE57A" />
+            <rect x="12" y="10" width="8" height="6" fill="#FFE57A" />
+            <rect x="10" y="7" width="3" height="3" fill="black" />
+            <rect x="19" y="7" width="3" height="3" fill="black" />
+            <rect x="15" y="12" width="2" height="2" fill="#4A2C00" />
+            <rect x="7" y="16" width="18" height="12" fill="#FFD700" />
+            <rect x="8" y="28" width="4" height="4" fill="#B8860B" />
+            <rect x="20" y="28" width="4" height="4" fill="#B8860B" />
         </svg>
     </div>
 
