@@ -1,47 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
     <title>Pixel Pet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. Экран загрузки -->
-    <div id="loader-screen">
+    <div id="loader-screen" class="screen">
         <div class="spinner"></div>
     </div>
 
-    <!-- 2. Экран приветствия -->
-    <div id="hello-screen" class="hidden">
-        <h1>hello.</h1>
+    <div id="welcome-screen" class="screen hidden">
+        <h1 class="fade-text">Welcome.</h1>
     </div>
 
-    <!-- 3. Экран ввода ника -->
-    <div id="input-screen" class="hidden">
-        <input type="text" id="name-input" placeholder="Введите имя">
-        <button id="ok-btn">OK</button>
+    <div id="choice-screen" class="screen hidden">
+        <div class="choice-container">
+            <button onclick="selectPet('cat')">Котик</button>
+            <button onclick="selectPet('dog')">Собачка</button>
+        </div>
     </div>
 
-    <!-- 4. Основной экран с игрой -->
-    <div id="main-screen" class="hidden">
-        <!-- Сюда JS вставит имя -->
-        <div id="nickname-plate"></div> 
-        
-        <svg id="pet" viewBox="0 0 32 32" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="4" width="4" height="6" fill="#B8860B" />
-            <rect x="22" y="4" width="4" height="6" fill="#B8860B" />
-            <rect x="8" y="4" width="16" height="12" fill="#FFD700" />
-            <rect x="9" y="5" width="2" height="2" fill="#FFE57A" />
-            <rect x="12" y="10" width="8" height="6" fill="#FFE57A" />
-            <rect x="10" y="7" width="3" height="3" fill="black" />
-            <rect x="19" y="7" width="3" height="3" fill="black" />
-            <rect x="15" y="12" width="2" height="2" fill="#4A2C00" />
-            <rect x="7" y="16" width="18" height="12" fill="#FFD700" />
-            <rect x="8" y="28" width="4" height="4" fill="#B8860B" />
-            <rect x="20" y="28" width="4" height="4" fill="#B8860B" />
-        </svg>
+    <div id="name-screen" class="screen hidden">
+        <div class="input-container">
+            <input type="text" id="pet-name" placeholder="Введите имя...">
+            <button id="ok-btn">OK</button>
+        </div>
+    </div>
+
+    <div id="lobby-screen" class="screen hidden">
+        <h2 id="pet-name-display"></h2>
+        <div id="pet-sprite"></div>
     </div>
 
     <script src="app.js"></script>
