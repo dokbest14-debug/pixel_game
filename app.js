@@ -1,28 +1,36 @@
 const screens = {
     loader: document.getElementById('loader-screen'),
-    hello: document.getElementById('hello-screen'),
-    input: document.getElementById('input-screen'),
-    main: document.getElementById('main-screen')
+    welcome: document.getElementById('welcome-screen'),
+    choice: document.getElementById('choice-screen'),
+    name: document.getElementById('name-screen'),
+    lobby: document.getElementById('lobby-screen')
 };
 
-// 1-2 сек загрузка -> hello
-setTimeout(() => {
-    screens.loader.classList.add('hidden');
-    screens.hello.classList.remove('hidden');
-}, 2000);
+let gameState = { type: null, name: null };
 
-// через 3 сек -> ввод имени
-setTimeout(() => {
-    screens.hello.classList.add('hidden');
-    screens.input.classList.remove('hidden');
-}, 5000); // 2 + 3 сек
+function selectPet(type) {
+    gameState.type = type;
+    screens.choice.classList.add('hidden');
+    screens.name.classList.remove('hidden');
+}
 
-// Кнопка ОК
 document.getElementById('ok-btn').addEventListener('click', () => {
-    const name = document.getElementById('name-input').value;
+    const name = document.getElementById('pet-name').value;
     if (name) {
-        document.getElementById('nickname-plate').innerText = name;
-        screens.input.classList.add('hidden');
-        screens.main.classList.remove('hidden');
+        gameState.name = name;
+        screens.name.classList.add('hidden');
+        document.getElementById('pet-name-display').innerText = name;
+        screens.lobby.classList.remove('hidden');
     }
 });
+
+window.onload = () => {
+    setTimeout(() => {
+        screens.loader.classList.add('hidden');
+        screens.welcome.classList.remove('hidden');
+        setTimeout(() => {
+            screens.welcome.classList.add('hidden');
+            screens.choice.classList.remove('hidden');
+        }, 2000);
+    }, 1500);
+};
