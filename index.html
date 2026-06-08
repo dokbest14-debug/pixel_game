@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Pet</title>
     <link rel="stylesheet" href="style.css">
+    <title>Pixel Pet</title>
 </head>
 <body>
 
@@ -26,9 +26,10 @@
 
     <!-- 4. Основной экран с игрой -->
     <div id="main-screen" class="hidden">
-        <div id="name-display"></div>
+        <!-- Сюда JS вставит имя -->
+        <div id="nickname-plate"></div> 
         
-        <svg id="pet" class="floating-pet" viewBox="0 0 32 32" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+        <svg id="pet" viewBox="0 0 32 32" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="4" width="4" height="6" fill="#B8860B" />
             <rect x="22" y="4" width="4" height="6" fill="#B8860B" />
             <rect x="8" y="4" width="16" height="12" fill="#FFD700" />
